@@ -14,84 +14,96 @@
 
     <h1 class="black-60 f5 ttu tracked">Source/Vault Banner Generator</h1>
     
-    <div class="w-30 fl">
-      <div class="bg-light-gray black-80 pv2">
-        <ol>
-          <li class="mb2">Choose a banner design</li>
-          <li class="mb2">Put in the necessary copy</li>
-          <li>Download</li>
-        </ol>
-      </div>      
+    <div class="flex items-center">
 
-      <form action="get" id="textGenerator" class="pt4">
-        <label for="design" class="dib mb4 w-100">
-          <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
-          <select name="designOption" id="bannerDesignOption">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </label>
-        <label for="headline" class="dib mb4 w-100">
-          <div class="black-50 f7 mb1 tracked ttu">Headline</div>
-          <input type="text" name="headline" v-model="headline" class="ba b--black-40 pa1 w-100">
-        </label>
-        <label for="location" class="dib mb4 w-100">
-          <div class="black-50 f7 mb1 tracked ttu">Location</div>
-          <textarea name="location" v-model="location" cols="30" rows="5" class="ba b--black-40 pa1 w-100"></textarea>
-        </label>
-        <label for="date" class="dib mb4 w-100">
-          <div class="black-50 f7 mb1 tracked ttu">Date</div>
-          <input type="text" name="date" v-model="dateDisplay" class="ba b--black-40 pa1 w-100">
-        </label>
-        <label for="time" class="dib mb4 w-100">
-          <div class="black-50 f7 mb1 tracked ttu">Time</div>
-          <input type="text" name="time" v-model="timeDisplay" class="ba b--black-40 pa1 w-100">
-        </label>
-        <label for="finePrint" class="dib mb4 w-100">
-          <div class="black-50 f7 mb1 tracked ttu">Fine Print</div>
-          <input type="text" name="finePrint" v-model="finePrint" class="ba b--black-40 pa1 w-100">
-        </label>
-      </form>
-    </div>    
-    
-    <div class="w-60 fr">
-      <div id="source-preview" class="option1 ba b--black-40 flex items-center">
-        <div class="positioning-container">
-          <header class="ma0 relative ttu">{{ headline }}</header>  
-          <p class="location ma0 relative">{{ location }}</p>
-          <p class="date-time ma0 relative"><strong class="db">{{ dateDisplay }}</strong> {{ timeDisplay }}</p>
-          <p class="finePrint ma0 relative"><small>{{ finePrint }}</small></p>
-        </div>
-        <div class="background"></div>
+      <div class="w-30">
+        <div class="bg-light-gray black-80 pv2">
+          <ol>
+            <li class="mb2">Choose a banner design</li>
+            <li class="mb2">Put in the necessary copy</li>
+            <li>Download</li>
+          </ol>
+        </div>      
+
+        <form action="get" id="textGenerator" class="pt4">
+          <label for="design" class="dib mb4 w-100">
+            <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
+            <ul id="designOptions" class="list pl0">
+              <li class="tc dib mr2">
+                <img src="images/btn-option1.png" data-option="option1" alt="" class="b--black-40 ba br2 h3 w3 dib">
+              </li>
+              <li class="tc dib mr2">
+                <img src="images/btn-option2.png" data-option="option2" alt="" class="b--black-40 ba br2 h3 w3 dib">
+              </li>
+              <li class="tc dib">
+                <img src="images/btn-option3.png" data-option="option3" alt="" class="b--black-40 ba br2 h3 w3 dib">
+              </li>
+            </ul>
+          </label>
+          <label for="headline" class="dib mb4 w-100">
+            <div class="black-50 f7 mb1 tracked ttu">Headline</div>
+            <input type="text" name="headline" v-model="headline" class="ba b--black-40 pa1 w-100">
+          </label>
+          <label for="location" class="dib mb4 w-100">
+            <div class="black-50 f7 mb1 tracked ttu">Location</div>
+            <textarea name="location" v-model="location" cols="30" rows="5" class="ba b--black-40 pa1 w-100"></textarea>
+          </label>
+          <label for="date" class="dib mb4 w-100">
+            <div class="black-50 f7 mb1 tracked ttu">Date</div>
+            <input type="text" name="date" v-model="dateDisplay" class="ba b--black-40 pa1 w-100">
+          </label>
+          <label for="time" class="dib mb4 w-100">
+            <div class="black-50 f7 mb1 tracked ttu">Time</div>
+            <input type="text" name="time" v-model="timeDisplay" class="ba b--black-40 pa1 w-100">
+          </label>
+          <label for="finePrint" class="dib mb4 w-100">
+            <div class="black-50 f7 mb1 tracked ttu">Fine Print</div>
+            <input type="text" name="finePrint" v-model="finePrint" class="ba b--black-40 pa1 w-100">
+          </label>
+        </form>
       </div>
 
-      <p class="black-50 f7 ttu tracked">Source Banner<a href="#" id="downloadSource" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
+      <div class="w-10"></div>
       
-      <div id="vault-preview" class="option1 ba b--black-40 flex items-center">
-        <div class="positioning-container">
-          <header class="ma0 relative ttu">{{ headline }}</header>  
-          <p class="location ma0 relative">{{ location }}</p>
-          <p class="date-time ma0 relative"><strong class="db">{{ dateDisplay }}</strong> {{ timeDisplay }}</p>
-          <p class="finePrint ma0 relative">{{ finePrint }}</p>
+      <div class="w-60">
+        <div id="source-preview" class="ba b--black-40 flex items-center" v-bind:class="{ active: isActive }">
+          <div class="positioning-container">
+            <header class="ma0 relative ttu">{{ headline }}</header>  
+            <p class="location ma0 relative">{{ location }}</p>
+            <p class="date-time ma0 relative"><strong class="db">{{ dateDisplay }}</strong> {{ timeDisplay }}</p>
+            <p class="finePrint ma0 relative"><small>{{ finePrint }}</small></p>
+          </div>
+          <div class="background"></div>
         </div>
-        <div class="background"></div>
+
+        <p class="black-50 f7 ttu tracked">Source Banner<a href="#" id="downloadSource" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
+        
+        <div id="vault-preview" class="ba b--black-40 flex items-center" v-bind:class="{ active: isActive }">
+          <div class="positioning-container">
+            <header class="ma0 relative ttu">{{ headline }}</header>  
+            <p class="location ma0 relative">{{ location }}</p>
+            <p class="date-time ma0 relative"><strong class="db">{{ dateDisplay }}</strong> {{ timeDisplay }}</p>
+            <p class="finePrint ma0 relative">{{ finePrint }}</p>
+          </div>
+          <div class="background"></div>
+        </div>
+        
+        <p class="black-50 f7 ttu tracked">Vault Banner <a href="#" id="downloadVault" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
       </div>
-      
-      <p class="black-50 f7 ttu tracked">Vault Banner <a href="#" id="downloadVault" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
+
     </div>
-
   </div>
 
   <script>
-    var app = new Vue({
+    new Vue({
       el: '#app',
       data: {
         headline: 'Please Join Us Live For The Q4 FY18 Company Meeting',
         location: 'in the Palo Alto Prom F Gym or via webcast',
         dateDisplay: 'Thursday, December 7, 2017',
         timeDisplay: 'from 9:00 AM - 10:30 AM PST',
-        finePrint: 'Visit the Company Meeting Source page for details'
+        finePrint: 'Visit the Company Meeting Source page for details',
+        isActive: true
       }
     });
   </script>

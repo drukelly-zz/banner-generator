@@ -49,6 +49,10 @@ textarea {
   position: relative;
 }
 
+#designOptions li {
+  cursor: pointer;
+}
+
 /* Source: Option 1 Theme */
 #source-preview.option1 .background {
   background: url('/images/bg-option1.png') no-repeat right top;
