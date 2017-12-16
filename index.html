@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
   <link rel="stylesheet" href="css/app.css"/>
-  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue@2.5.11/dist/vue.min.js"></script>
 </head>
 <body class="sans-serif ma4">
   
@@ -26,17 +26,11 @@
         </div>      
 
         <form action="get" id="textGenerator" class="pt4">
-          <label for="design" class="dib mb4 w-100">
+          <label class="dib mb2 w-100">
             <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
             <ul id="designOptions" class="list pl0">
-              <li class="tc dib mr2">
-                <img src="images/btn-option1.png" data-option="option1" alt="" class="b--black-40 ba br2 h3 w3 dib">
-              </li>
-              <li class="tc dib mr2">
-                <img src="images/btn-option2.png" data-option="option2" alt="" class="b--black-40 ba br2 h3 w3 dib">
-              </li>
-              <li class="tc dib">
-                <img src="images/btn-option3.png" data-option="option3" alt="" class="b--black-40 ba br2 h3 w3 dib">
+              <li v-for="item in options" class="tc dib mr2">
+                <img :src="'/images/btn-' + item.value + '.png'" :data-option="item.value" alt="" class="b--black-40 ba br2 h3 w3 dib">
               </li>
             </ul>
           </label>
@@ -66,7 +60,9 @@
       <div class="w-10"></div>
       
       <div class="w-60">
-        <div id="source-preview" class="ba b--black-40 flex items-center" v-bind:class="{ active: isActive }">
+        <div class="ba b--black-40 flex items-center mv4"
+          v-for="type in types"
+          :id="type.value + '-preview'">
           <div class="positioning-container">
             <header class="ma0 relative ttu">{{ headline }}</header>  
             <p class="location ma0 relative">{{ location }}</p>
@@ -75,27 +71,14 @@
           </div>
           <div class="background"></div>
         </div>
-
-        <p class="black-50 f7 ttu tracked">Source Banner<a href="#" id="downloadSource" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
-        
-        <div id="vault-preview" class="ba b--black-40 flex items-center" v-bind:class="{ active: isActive }">
-          <div class="positioning-container">
-            <header class="ma0 relative ttu">{{ headline }}</header>  
-            <p class="location ma0 relative">{{ location }}</p>
-            <p class="date-time ma0 relative"><strong class="db">{{ dateDisplay }}</strong> {{ timeDisplay }}</p>
-            <p class="finePrint ma0 relative">{{ finePrint }}</p>
-          </div>
-          <div class="background"></div>
-        </div>
-        
-        <p class="black-50 f7 ttu tracked">Vault Banner <a href="#" id="downloadVault" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
+        <p class="black-50 f7 ttu tracked">Source <a href="#" class="bg-green br-pill dib dim link ml2 mr4 ph3 pv2 white">Download</a>
+        Vault <a href="#" class="bg-green br-pill dib dim link ml2 ph3 pv2 white">Download</a> </p>  
       </div>
-
     </div>
   </div>
 
   <script>
-    new Vue({
+    var app = new Vue({
       el: '#app',
       data: {
         headline: 'Please Join Us Live For The Q4 FY18 Company Meeting',
@@ -103,8 +86,25 @@
         dateDisplay: 'Thursday, December 7, 2017',
         timeDisplay: 'from 9:00 AM - 10:30 AM PST',
         finePrint: 'Visit the Company Meeting Source page for details',
-        isActive: true
+        options: [
+          { value: 'option1' },
+          { value: 'option2' },
+          { value: 'option3' }
+        ],
+        types: [
+          { value: 'source' },
+          { value: 'vault' }
+        ]
       }
+      // ,
+      // methods: {
+      //   pickOption: function(e) {
+      //     const targetDivs = document.querySelectorAll('.target');
+      //     const selectedOption = e.target.dataset.option;
+      //     targetDivs.forEach(function(element) {
+      //     });
+      //   }
+      // }
     });
   </script>
 
