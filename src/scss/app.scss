@@ -7,6 +7,10 @@ textarea {
   resize: none;
 }
 
+.active {
+  border-color: #333;
+}
+
 #source-preview,
 #vault-preview {
   overflow: hidden;
