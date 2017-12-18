@@ -1,0 +1,131 @@
+input,
+select,
+textarea {
+  font-size: .8em;
+}
+textarea {
+  resize: none;
+}
+
+#source-preview,
+#vault-preview {
+  overflow: hidden;
+  position: relative;
+  header {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 700;
+    z-index: 20;
+  }
+  p {
+    font-family: 'Proxima Nova', sans-serif;
+    z-index: 10;
+  }
+}
+
+#source-preview {
+  height: 220px;
+  width: 600px;
+}
+
+#vault-preview {
+  height: 285px;
+  width: 721px;
+}
+
+.background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.positioning-container {
+  left: 30px;
+  position: relative;
+}
+
+#designOptions li {
+  cursor: pointer;
+}
+
+/* Source: Option 1 Theme */
+#source-preview.option1 {
+  .background {
+    background: url('/images/bg-option1.png') no-repeat right top;
+    background-size: 220px 220px;
+  }
+  .positioning-container {
+    width: 364px;
+  }
+  header {
+    color: #003d79;
+    font-size: 23px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  .location,
+  .date-time {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+  .location {
+    font-weight: 300;
+  }
+}
+
+/* Vault: Option 1 Theme */
+#vault-preview.option1  {
+  .background {
+    background: url('/images/bg-option1.png') no-repeat right top;
+    background-size: 285px 285px;
+  }
+  .positioning-container {
+    width: 434px;
+  }
+  header {
+    color: #003d79;
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  .location,
+  .date-time {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+  .location {
+    font-weight: 300;
+  }
+}
+
+/* Source: Option 2 Theme */
+#source-preview.option2 {
+  .background {
+    background: url('/images/bg-option2.png') no-repeat right bottom;
+    background-size: 165px 220px;
+  }
+}
+/* Vault: Option 2 Theme */
+#vault-preview.option2 {
+  .background {
+    background: url('/images/bg-option2.png') no-repeat right bottom;
+    background-size: 214px 285px;
+  }
+}
+
+/* Source: Option 3 Theme */
+#source-preview.option3 {
+  .background {
+    background: url('/images/bg-option3.png') no-repeat right top;
+    background-size: 110px 220px;
+  }
+}
+
+/* Vault: Option 3 Theme */
+#vault-preview.option3 {
+  .background {
+    background: url('/images/bg-option3.png') no-repeat right top;
+    background-size: 143px 285px;
+  }
+}

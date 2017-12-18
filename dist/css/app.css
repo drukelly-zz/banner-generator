@@ -1,0 +1,108 @@
+input,
+select,
+textarea {
+  font-size: .8em; }
+
+textarea {
+  resize: none; }
+
+#source-preview,
+#vault-preview {
+  overflow: hidden;
+  position: relative; }
+  #source-preview header,
+  #vault-preview header {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 700;
+    z-index: 20; }
+  #source-preview p,
+  #vault-preview p {
+    font-family: 'Proxima Nova', sans-serif;
+    z-index: 10; }
+
+#source-preview {
+  height: 220px;
+  width: 600px; }
+
+#vault-preview {
+  height: 285px;
+  width: 721px; }
+
+.background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.positioning-container {
+  left: 30px;
+  position: relative; }
+
+#designOptions li {
+  cursor: pointer; }
+
+/* Source: Option 1 Theme */
+#source-preview.option1 .background {
+  background: url("/images/bg-option1.png") no-repeat right top;
+  background-size: 220px 220px; }
+
+#source-preview.option1 .positioning-container {
+  width: 364px; }
+
+#source-preview.option1 header {
+  color: #003d79;
+  font-size: 23px;
+  line-height: 1;
+  margin-bottom: 15px; }
+
+#source-preview.option1 .location,
+#source-preview.option1 .date-time {
+  font-size: 17px;
+  margin-bottom: 15px; }
+
+#source-preview.option1 .location {
+  font-weight: 300; }
+
+/* Vault: Option 1 Theme */
+#vault-preview.option1 .background {
+  background: url("/images/bg-option1.png") no-repeat right top;
+  background-size: 285px 285px; }
+
+#vault-preview.option1 .positioning-container {
+  width: 434px; }
+
+#vault-preview.option1 header {
+  color: #003d79;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 15px; }
+
+#vault-preview.option1 .location,
+#vault-preview.option1 .date-time {
+  font-size: 21px;
+  margin-bottom: 15px; }
+
+#vault-preview.option1 .location {
+  font-weight: 300; }
+
+/* Source: Option 2 Theme */
+#source-preview.option2 .background {
+  background: url("/images/bg-option2.png") no-repeat right bottom;
+  background-size: 165px 220px; }
+
+/* Vault: Option 2 Theme */
+#vault-preview.option2 .background {
+  background: url("/images/bg-option2.png") no-repeat right bottom;
+  background-size: 214px 285px; }
+
+/* Source: Option 3 Theme */
+#source-preview.option3 .background {
+  background: url("/images/bg-option3.png") no-repeat right top;
+  background-size: 110px 220px; }
+
+/* Vault: Option 3 Theme */
+#vault-preview.option3 .background {
+  background: url("/images/bg-option3.png") no-repeat right top;
+  background-size: 143px 285px; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zY3NzL2FwcC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHRSxnQkFBZSxFQUNoQjs7QUFDRDtFQUNFLGFBQVksRUFDYjs7QUFFRDs7RUFFRSxpQkFBZ0I7RUFDaEIsbUJBQWtCLEVBVW5CO0VBYkQ7O0lBS0ksd0NBQXVDO0lBQ3ZDLGlCQUFnQjtJQUNoQixZQUFXLEVBQ1o7RUFSSDs7SUFVSSx3Q0FBdUM7SUFDdkMsWUFBVyxFQUNaOztBQUdIO0VBQ0UsY0FBYTtFQUNiLGFBQVksRUFDYjs7QUFFRDtFQUNFLGNBQWE7RUFDYixhQUFZLEVBQ2I7O0FBRUQ7RUFDRSxhQUFZO0VBQ1osUUFBTztFQUNQLG1CQUFrQjtFQUNsQixPQUFNO0VBQ04sWUFBVyxFQUNaOztBQUVEO0VBQ0UsV0FBVTtFQUNWLG1CQUFrQixFQUNuQjs7QUFFRDtFQUNFLGdCQUFlLEVBQ2hCOztBQUVELDRCQUE0QjtBQUM1QjtFQUVJLDhEQUE2RDtFQUM3RCw2QkFBNEIsRUFDN0I7O0FBSkg7RUFNSSxhQUFZLEVBQ2I7O0FBUEg7RUFTSSxlQUFjO0VBQ2QsZ0JBQWU7RUFDZixlQUFjO0VBQ2Qsb0JBQW1CLEVBQ3BCOztBQWJIOztFQWdCSSxnQkFBZTtFQUNmLG9CQUFtQixFQUNwQjs7QUFsQkg7RUFvQkksaUJBQWdCLEVBQ2pCOztBQUdILDJCQUEyQjtBQUMzQjtFQUVJLDhEQUE2RDtFQUM3RCw2QkFBNEIsRUFDN0I7O0FBSkg7RUFNSSxhQUFZLEVBQ2I7O0FBUEg7RUFTSSxlQUFjO0VBQ2QsZ0JBQWU7RUFDZixlQUFjO0VBQ2Qsb0JBQW1CLEVBQ3BCOztBQWJIOztFQWdCSSxnQkFBZTtFQUNmLG9CQUFtQixFQUNwQjs7QUFsQkg7RUFvQkksaUJBQWdCLEVBQ2pCOztBQUdILDRCQUE0QjtBQUM1QjtFQUVJLGlFQUFnRTtFQUNoRSw2QkFBNEIsRUFDN0I7O0FBRUgsMkJBQTJCO0FBQzNCO0VBRUksaUVBQWdFO0VBQ2hFLDZCQUE0QixFQUM3Qjs7QUFHSCw0QkFBNEI7QUFDNUI7RUFFSSw4REFBNkQ7RUFDN0QsNkJBQTRCLEVBQzdCOztBQUdILDJCQUEyQjtBQUMzQjtFQUVJLDhEQUE2RDtFQUM3RCw2QkFBNEIsRUFDN0IiLCJmaWxlIjoiYXBwLmNzcyJ9 */
