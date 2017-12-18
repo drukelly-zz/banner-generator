@@ -49,6 +49,20 @@ textarea {
   cursor: pointer;
 }
 
+.option1, .option2, .option3 {
+  header {
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .location,
+  .date-time {
+    margin-bottom: 12px;
+  }
+  .location {
+    font-weight: 300;
+  }
+}
+
 /* Source: Option 1 Theme */
 #source-preview.option1 {
   .background {
@@ -61,16 +75,10 @@ textarea {
   header {
     color: #003d79;
     font-size: 23px;
-    line-height: 1;
-    margin-bottom: 15px;
   }
   .location,
   .date-time {
     font-size: 17px;
-    margin-bottom: 15px;
-  }
-  .location {
-    font-weight: 300;
   }
 }
 
@@ -86,31 +94,53 @@ textarea {
   header {
     color: #003d79;
     font-size: 28px;
-    line-height: 1;
-    margin-bottom: 15px;
   }
   .location,
   .date-time {
     font-size: 21px;
-    margin-bottom: 15px;
-  }
-  .location {
-    font-weight: 300;
   }
 }
 
 /* Source: Option 2 Theme */
 #source-preview.option2 {
+  color: #fff;
   .background {
-    background: url('/images/bg-option2.png') no-repeat right bottom;
+    background: #6e6e6e url('/images/bg-option2.png') no-repeat right bottom;
     background-size: 165px 220px;
+  }
+  .positioning-container {
+    width: 410px;
+  }
+  header {
+    font-size: 27px;
+  }
+  .location,
+  .date-time {
+    font-size: 20px;
+  }
+  .finePrint {
+    color: #ccc;
   }
 }
 /* Vault: Option 2 Theme */
 #vault-preview.option2 {
+  color: #fff;
   .background {
-    background: url('/images/bg-option2.png') no-repeat right bottom;
+    background: #6e6e6e url('/images/bg-option2.png') no-repeat right bottom;
     background-size: 214px 285px;
+  }
+  .positioning-container {
+    width: 510px;
+  }
+  header {
+    font-size: 32px;
+  }
+  .location,
+  .date-time {
+    font-size: 24px;
+  }
+  .finePrint {
+    color: #ccc;
   }
 }
 
@@ -120,6 +150,19 @@ textarea {
     background: url('/images/bg-option3.png') no-repeat right top;
     background-size: 110px 220px;
   }
+  .positioning-container {
+    width: 410px;
+  }
+  header {
+    font-size: 27px;
+  }
+  .location,
+  .date-time {
+    font-size: 20px;
+  }
+  .finePrint {
+    color: #999;
+  }
 }
 
 /* Vault: Option 3 Theme */
@@ -127,5 +170,18 @@ textarea {
   .background {
     background: url('/images/bg-option3.png') no-repeat right top;
     background-size: 143px 285px;
+  }
+  .positioning-container {
+    width: 510px;
+  }
+  header {
+    font-size: 32px;
+  }
+  .location,
+  .date-time {
+    font-size: 24px;
+  }
+  .finePrint {
+    color: #999;
   }
 }
