@@ -30,7 +30,7 @@
             <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
             <ul id="designOptions" class="list pl0">
               <li v-for="item in options" class="tc dib mr2">
-                <img :src="'/images/btn-' + item.value + '.png'" :data-option="item.value" alt="" class="b--black-40 ba br2 h3 w3 dib">
+                <img @click="pickOption" :src="'/images/btn-' + item.value + '.png'" :data-option="item.value" alt="" class="b--black-40 ba br2 h3 w3 dib">
               </li>
             </ul>
           </label>
@@ -60,10 +60,10 @@
       <div class="w-10"></div>
       
       <div class="w-60">
-        <div class="ba b--black-40 flex items-center mv4"
+        <div class="target ba b--black-40 flex items-center mv4"
           v-for="type in types"
           :id="type.value + '-preview'"
-          :class="">
+          :data="options.option">
           <div class="positioning-container">
             <header class="ma0 relative ttu">{{ headline }}</header>  
             <p class="location ma0 relative">{{ location }}</p>
@@ -97,15 +97,19 @@
           { value: 'vault' }
         ]
       }
-      // ,
-      // methods: {
-      //   pickOption: function(e) {
-      //     const targetDivs = document.querySelectorAll('.target');
-      //     const selectedOption = e.target.dataset.option;
-      //     targetDivs.forEach(function(element) {
-      //     });
-      //   }
-      // }
+      ,
+      methods: {
+        pickOption: function(e) {
+          const targetDivs = document.querySelectorAll('.target');
+          const selectedOption = e.target.dataset.option;
+          targetDivs.forEach(function(element) {
+            if ([].some.call(element.classList, c => /option.*/.test(c))) {
+              element.classList.remove('option1', 'option2', 'option3');
+            }
+            element.classList.add(selectedOption);
+          });
+        }
+      }
     });
   </script>
 
