@@ -13,7 +13,7 @@
   
   <div id="app" class="w-100">
 
-    <h1 class="black-60 f5 ttu tracked">Source/Vault Banner Generator</h1>
+    <h1 class="black-60 f5 ttu tracked">Banner Generator (Beta)</h1>
     
     <div class="flex items-center">
 
@@ -21,17 +21,17 @@
         <div class="bg-light-gray black-80 pv2">
           <ol>
             <li class="mb2">Choose a banner design</li>
-            <li class="mb2">Put in the necessary copy</li>
+            <li class="mb2">Update the text</li>
             <li>Download</li>
           </ol>
-        </div>      
+        </div>
 
-        <form action="get" id="textGenerator" class="pt4">
+        <form method="get" id="textGenerator" class="pt4">
           <label class="dib mb2 w-100">
             <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
             <ul id="designOptions" class="list pl0">
               <li v-for="item in options" class="tc dib mr2">
-                <img @click="pickOption" :src="'/images/btn-' + item.value + '.png'" :data-option="item.value" alt="" class="b--black-40 ba br2 h3 w3 dib">
+                <img @click="pickOption" :src="'/images/btn-' + item.value + '.png'" :data-option="item.value" alt="" class="option b--black-40 ba br2 h3 w3 dib">
               </li>
             </ul>
           </label>
@@ -100,8 +100,11 @@
       },
       methods: {
         pickOption: function(e) {
+          // select the divs to update with selected option class name
           const targetDivs = document.querySelectorAll('.target');
           const selectedOption = e.target.dataset.option;
+
+          // update target divs based on selected option
           targetDivs.forEach(function(element) {
             if ([].some.call(element.classList, c => /option.*/.test(c))) {
               element.classList.remove('option1', 'option2', 'option3');
@@ -112,16 +115,30 @@
       }
     });
 
-    // Download Links
+    // download links
     const sourceDownload = document.querySelector('#source-download');
     const vaultDownload = document.querySelector('#vault-download');
+    // generate canvas from source div
+    const sourceDiv = document.querySelector('#source-preview');
+    const vaultDiv = document.querySelector('#vault-preview');
 
-    sourceDownload.addEventListener('click', function(e) {
-      // console.log('source');
-    });
-
-    vaultDownload.addEventListener('click', function(e) {
-      // console.log('vault');
+    window.addEventListener('mousemove', function(e){
+      // generate download link for source
+      html2canvas(sourceDiv, {
+        onrendered: function(canvas) {
+          const image = canvas.toDataURL('image/png').replace('image/png','application/octet-stream');
+          sourceDownload.setAttribute('href', image);
+          sourceDownload.setAttribute('download', 'source-banner.png');
+        }
+      });
+      // generate download link for vault
+      html2canvas(vaultDiv, {
+        onrendered: function(canvas) {
+          const image = canvas.toDataURL('image/png').replace('image/png','application/octet-stream');
+          vaultDownload.setAttribute('href', image);
+          vaultDownload.setAttribute('download', 'vault-banner.png')
+        }
+      });
     });
   </script>
 
