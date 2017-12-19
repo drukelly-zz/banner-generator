@@ -7,8 +7,12 @@ textarea {
   resize: none;
 }
 
-.active {
+.active > img {
   border-color: #333;
+}
+
+.hide > * {
+  color: #fff;
 }
 
 #source-preview,
