@@ -7,6 +7,14 @@ textarea {
   resize: none;
 }
 
+strong {
+  font-weight: 600;
+}
+
+small {
+  font-size: 70%;
+}
+
 .active > img {
   border-color: #333;
 }
@@ -19,13 +27,16 @@ textarea {
 #vault-preview {
   overflow: hidden;
   position: relative;
+  text-rendering: geometricPrecision;
   header {
-    font-family: 'Proxima Nova', sans-serif;
-    font-weight: 700;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 600;
     z-index: 20;
+    letter-spacing: -0.5pt;
   }
   p {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 300;
     z-index: 10;
   }
 }
@@ -78,15 +89,15 @@ textarea {
     background-size: 220px 220px;
   }
   .positioning-container {
-    width: 364px;
+    width: 360px;
   }
   header {
     color: #003d79;
-    font-size: 23px;
+    font-size: 22px;
   }
   .location,
   .date-time {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 
@@ -101,11 +112,11 @@ textarea {
   }
   header {
     color: #003d79;
-    font-size: 28px;
+    font-size: 26px;
   }
   .location,
   .date-time {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
@@ -120,11 +131,11 @@ textarea {
     width: 410px;
   }
   header {
-    font-size: 27px;
+    font-size: 24px;
   }
   .location,
   .date-time {
-    font-size: 20px;
+    font-size: 18px;
   }
   .finePrint {
     color: #ccc;
@@ -145,7 +156,7 @@ textarea {
   }
   .location,
   .date-time {
-    font-size: 24px;
+    font-size: 22px;
   }
   .finePrint {
     color: #ccc;
@@ -159,14 +170,14 @@ textarea {
     background-size: 110px 220px;
   }
   .positioning-container {
-    width: 410px;
+    width: 370px;
   }
   header {
-    font-size: 27px;
+    font-size: 22px;
   }
   .location,
   .date-time {
-    font-size: 20px;
+    font-size: 16px;
   }
   .finePrint {
     color: #999;
@@ -180,14 +191,14 @@ textarea {
     background-size: 143px 285px;
   }
   .positioning-container {
-    width: 510px;
+    width: 480px;
   }
   header {
-    font-size: 32px;
+    font-size: 28px;
   }
   .location,
   .date-time {
-    font-size: 24px;
+    font-size: 20px;
   }
   .finePrint {
     color: #999;
