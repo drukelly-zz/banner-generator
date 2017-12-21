@@ -19,8 +19,19 @@ small {
   border-color: #333;
 }
 
-.hide > * {
+.hide {
+  &.cta {
+    display: none;
+  }
+  > * {
   color: #fff;
+  }
+}
+
+.cta {
+  background-color: #6db33f;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 #source-preview,
@@ -37,6 +48,7 @@ small {
   p {
     font-family: 'Gotham', sans-serif;
     font-weight: 300;
+    line-height: 1.22;
     z-index: 10;
   }
 }
