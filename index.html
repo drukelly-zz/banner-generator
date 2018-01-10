@@ -16,12 +16,13 @@
   
   <div id="app" class="w-100">
 
-    <h1 class="black-60 f5 ttu tracked">Banner Generator (Beta)</h1>
+    <h1 class="black-60 f5 ma0 ttu tracked"> Social Media Post Generator </h1>
+    <h3 class="black-30 f7 ma0 ttu tracked"> (Beta) </h3>
     
     <div class="flex items-center">
 
       <div class="w-30">
-        <div class="bg-light-gray black-80 pv2">
+        <div class="bg-light-gray black-80 mt4 pv2">
           <ol>
             <li class="mb2">Choose a banner design</li>
             <li class="mb2">Update the text</li>
@@ -34,7 +35,7 @@
             <div class="black-50 dib f7 mr1 tracked ttu">Design</div>
             <ul id="designOptions" class="list pl0">
               <li v-for="item in options" class="tc dib mr2">
-                <img alt="" class="option ba bw2 b--black-10 br2 h3 w3 dib" @click="pickOption" :src="'/images/btn-' + item.value + '.png'" :data-option="item.value">
+                <img alt="" class="option ba bw2 b--black-10 br2 h3 w3 dib" @click="pickOption" :src="'images/btn-' + item.value + '.png'" :data-option="item.value">
               </li>
             </ul>
           </label>
