@@ -62,10 +62,6 @@ small {
   font-size: .8em;
   margin-top: 5px;
   padding: 6px 12px;
-  span {
-    position: relative;
-    top: 1px;
-  }
 }
 
 #source-preview,
@@ -75,8 +71,9 @@ small {
   text-rendering: geometricPrecision;
   header {
     font-family: 'Gotham-Bold', sans-serif;
-    z-index: 20;
     letter-spacing: -0.5pt;
+    margin-bottom: .33em;
+    z-index: 20;
   }
   p {
     font-family: 'Gotham-Book', sans-serif;
